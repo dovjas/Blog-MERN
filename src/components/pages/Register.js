@@ -1,7 +1,12 @@
 
 const Register = () =>{
     return(
-        <div>Registracija</div>
+        <form className="register">
+        <h1>Registration</h1>
+        <input type="text" placeholder="username" />
+        <input type="password" placeholder="password" /> 
+        <button>Register</button>
+    </form>
     )
 }
 
