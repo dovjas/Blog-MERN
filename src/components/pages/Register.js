@@ -4,14 +4,19 @@ const Register = () =>{
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    const registration = async (e) =>{
+    async function registration(e){
         e.preventDefault();
-        await fetch('http://localhost:4000/register',{
+        const response = await fetch('http://localhost:4000/register',{
             method:'POST',
-            body: JSON.stringify({username,password}),
-            header:{'Content-Type':'application/json'}
+            body: JSON.stringify({username, password}),
+            headers:{'Content-Type':'application/json'}
         });
-    }
+        if(response.status === 200){
+            alert('Registration sucessfull')
+        }else{
+            alert('Registration failed')
+        }
+    };
     return(
         <form className="register" onSubmit={registration}>
         <h1>Registration</h1>
