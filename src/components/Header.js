@@ -12,6 +12,15 @@ const Header = () =>{
             });
         });
     },[]);
+
+    const logout = () =>{
+        fetch('http://localhost:4000/logout', {
+            credentials:'include',
+            method:'POST'
+        })
+        setUsername(null)
+    }
+
     return(
         <header>
         <Link to='/' className="logo">Blog</Link>
