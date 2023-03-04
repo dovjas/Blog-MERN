@@ -1,12 +1,12 @@
 import './App.css'
-import Article from "./components/Articles";
-import Header from "./components/Header";
+
 import {Routes, Route} from "react-router-dom";
 import Layout from "./components/Layout";
 import Index from "./components/pages/Index";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
 import { UserContextProvider } from "./components/UserContext";
+import CreatePost from "./components/pages/CreatePost";
 
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
           <Route index element = {<Index />}/>
           <Route path={'/login'} element = {<Login />} />
           <Route path={'/register'} element = {<Register />} />
+          <Route path={'/create'} element = {<CreatePost />} />
         </Route>
       </Routes>
     </UserContextProvider>
